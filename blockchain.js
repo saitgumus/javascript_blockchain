@@ -37,6 +37,8 @@ class Transaction{
     }
 }
 
+
+
 class Block {
     constructor( date, transactions, preHash = ''){
         this.date = date;
@@ -49,7 +51,7 @@ class Block {
 
 
     calculateHash(){
-        return SHA256(this.date + JSON.stringify(this.transaction)+ this.nonce).toString();
+        return SHA256(this.date + JSON.stringify(this.transactions)+ this.nonce).toString();
     }
 
     mineBlock(dificulty){
